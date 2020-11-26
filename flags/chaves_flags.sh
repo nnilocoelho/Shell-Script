@@ -2,11 +2,11 @@
 #
 # listaUsuarios.sh - Extrai usuários do /etc/passwd
 #
-#Desenvolvido através do Curso de Shell Script do Básico ao Profissional
-#Tutor: Matheus Muller
+# Desenvolvido através do Curso de Shell Script do Básico ao Profissional - Udemy
+# Tutor: Matheus Muller
 #
 # ------------------------------------------------------------------------ #
-#  Irá extrair usuários do /etc/passwd, havendo a possibilidade de colocar
+#  Extrair usuários do /etc/passwd, havendo a possibilidade de colocar
 #  em maiúsculo e em ordem alfabética.
 #
 #  Exemplos:
@@ -15,6 +15,7 @@
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- VARIÁVEIS ----------------------------------------- #
+
 USUARIOS="$(cat /etc/passwd | cut -d : -f 1)"
 MENSAGEM_USO="
   $(basename $0) - [OPÇÕES]
@@ -27,9 +28,11 @@ MENSAGEM_USO="
 VERSAO="v1.3"
 CHAVE_ORDENA=0
 CHAVE_MAIUSCULO=0
+
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
+
 while test -n "$1"
 do
   case "$1" in
@@ -46,4 +49,5 @@ done
 [ $CHAVE_MAIUSCULO -eq 1 ] && USUARIOS=$(echo "$USUARIOS" | tr [a-z] [A-Z])
 
 echo "$USUARIOS"
+
 # ------------------------------------------------------------------------ #
