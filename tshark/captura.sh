@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Diretório onde o arquivo PCAP fica armazenado.
-pcap_directory="/inserir/caminho/dodiretorio"
+pcap_directory="/inserir/caminho/do/diretorio"
 
 # Nome fixo do arquivo PCAP
 pcap_file="$pcap_directory/trafego_$(date
